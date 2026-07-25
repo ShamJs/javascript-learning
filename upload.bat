@@ -1,4 +1,5 @@
+git status
 git add .
-git commit -m "Daily JavaScript progress"
+git commit -m "Add upload script"
 git push
 pause
