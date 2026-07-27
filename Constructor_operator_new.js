@@ -1,5 +1,3 @@
-//Constructor Function and the new Operator
-//Many objects with repeated properties:
 let admin1={
     name:'sham',
     age:21
@@ -12,7 +10,6 @@ let admin3={
     name:'sh',
     age:23
 };
-//A constructor function creates a new object each time it is called with the new operator:
 function User(name,age){
     this.name=name,
     this.age=age
@@ -20,10 +17,6 @@ function User(name,age){
 let u1=new User('s',2);
 alert(u1.name);
 alert(u1.age);
-/*
-Creating a single object with an immediate invocation, without reusing it
-Useful when you need temporary local variables and complex initialization logic
-*/
 let person=new function(){
     this.name='j',
     this.age=20
@@ -35,7 +28,6 @@ function Obj(){
 Obj();
 let o=new Obj();
 alert(o);
-//ex2:
 function User5(name){
     if(!new.target){
         return(new User5(name))
@@ -44,7 +36,6 @@ function User5(name){
 };
 let u= new User5('l');
 alert(User5('k').name);//or :u.(name);
-//If a constructor function returns an object, new returns that object instead of this
 function Human(){
     this.name='b';
     return{
@@ -53,7 +44,6 @@ function Human(){
 };
 let h=new Human();
 alert(h.name);
-//If a constructor function returns a primitive value (number, string, boolean, null, undefined, etc.), new ignores it and returns this.
 function Human2(){
     this.name='j';
     return 'h'//or: return 5 , True, null, undefined
@@ -69,13 +59,11 @@ function User6(name){
 };
 let u6=new User6('sham-af');
 u6.sayHi();
-//The constructor functions create different objects, so the comparison returns false
 function A(){};
 function B(){};
 let a= new A();
 let b=new B();
 alert(a==b);
-//The constructor functions return the same external object, so new does not create two different objects, and the comparison result is true
 let object={};
 function Obj1(){
     return object
@@ -103,7 +91,6 @@ let c= new Calculator();
 c.read();
 alert(c.sum());
 alert(c.mull());
-//Accumulator
 function Box(start){
     this.total=start;
     this.add=function(){
@@ -113,5 +100,5 @@ function Box(start){
 let box=new Box(1);
 box.add();
 box.add();
-alert(box.total);//view
+alert(box.total);
 

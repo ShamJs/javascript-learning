@@ -1,56 +1,43 @@
-//in boolean always true
 let user1={name:'sham',age:21};
 alert(Boolean(user1));
-//ex2
 let user2={};
 alert(Boolean(user2));
-//object to string
 let user3={name:'marah'};
-alert(user3);//[object object]    Automatically
-alert(String(user3));//[object object]    Manually
-//object to number
+alert(user3);
+alert(String(user3));
 let user4={};
-alert(user4-4);//nan
-alert(Number(user4));//nan
+alert(user4-4);
+alert(Number(user4));
 let user5={num:5};
-alert(user5-4);//nan
-alert(user5.num-4);//5-4=1
-alert(Number(user5));//nan
-//hint:str,num,default
-//1-hint:string
+alert(user5-4);
+alert(user5.num-4);
+alert(Number(user5));
 let user6={name:'a'};
 let newUser={};
 newUser[user6]=12;
 for (key in newUser){
-    alert(newUser[key])//[object object]
+    alert(newUser[key])
 };
-alert(newUser);//[object object]
-alert(newUser[user6]);//12
-//2-hint:number
-
+alert(newUser);
+alert(newUser[user6]);
 let user7={name:'m'};
-alert(Number(user7));//nan
-alert(+user7);//nan
-//obj date
+alert(Number(user7));
+alert(+user7);
 let date=new Date();
 alert(typeof(date));//object
-//ex2
 let date1=new Date(2026,6,25);
 let date2=new Date(2026,6,20);
 alert(date1-date2);//432000000 :obj date to num : 5 day * 24 hour *60 min * 60 sec * 1000 msec
-//3-hint:default num? or str?
 let user8={
     name:'d'
 };
-alert(user8+50);// [object object]50
-alert(user8+'hi');// [bject object]hi
-//Symbol.toPrimitive
+alert(user8+50);
+alert(user8+'hi');
 let user9={name:'s',age:21,
     [Symbol.toPrimitive](hint){
         return this.name;
 }};
-alert(user9);//s
-//More than one return statement :
+alert(user9);
 let user10={
     name:'shsh',age:21,
     [Symbol.toPrimitive](hint){
@@ -63,20 +50,19 @@ let user10={
         return this.age
     }
 };
-alert(user10);//shsh
-alert(+user10);//21
-alert(user10+'hi');//shshhi
-alert(user10+6);//shsh6
-//short if/else to ?:
+alert(user10);
+alert(+user10);
+alert(user10+'hi');
+alert(user10+6);
 let user11={name:'sa',age:11,
     [Symbol.toPrimitive](hint){
         return (hint =='string'?this.name:this.age)
     }
 };
-alert(user11);//sham
-alert(+user11);//11
-alert(user11+'l');//11l
-alert(user11+5);//16
+alert(user11);
+alert(+user11);
+alert(user11+'l');
+alert(user11+5);
 //now :Symbol.toPrimitive but old :toString , valueOf
 let user12={name:'randa' , age:22 ,
     toString(){
@@ -86,17 +72,16 @@ let user12={name:'randa' , age:22 ,
         return this.age
     }
 };
-alert(user12);//randa
-alert(+user12);//22
-alert(user12+18);//30
-// + and *
+alert(user12);
+alert(+user12);
+alert(user12+18);
 let obj={
     toString(){
         return '2'
     }
 };
-alert(obj*2);//'2'*2 = 2*2 = 4
-alert(obj+2);//'2'+ 2 = 22
+alert(obj*2);
+alert(obj+2);
 //External example:
 let name=prompt('write your name :');
 let age=+prompt('enter your age','18');
