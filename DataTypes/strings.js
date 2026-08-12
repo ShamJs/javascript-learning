@@ -130,4 +130,4 @@ let s1='s\u0307\u0323'
 let s2='s\u0323\u0307';
 alert(s1==s2);
 alert(s1.normalize()==s2.normalize());
-alert('s\u0307\u0323'.normalize()=='\u1e68');
+alert('S\u0307\u0323'.normalize()=='\u1e68');
